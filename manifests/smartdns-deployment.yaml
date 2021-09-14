@@ -1,0 +1,23 @@
+apiVersion: smartdns/v1
+kind: Deployment
+metadata:
+  name: smartdns-deployment
+  labels:
+    app: smartdns
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: smartdns
+  template:
+    metadata:
+      labels:
+        app: smartdns
+    spec:
+      containers:
+      - name: smartdns
+        image: ${IMAGE}
+        ports:
+        - containerPort: 53
+          protocol: UDP
+
