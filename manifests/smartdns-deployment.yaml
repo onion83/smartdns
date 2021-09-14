@@ -99,7 +99,7 @@ metadata:
   uid: c4e51228-57eb-495d-aec2-363d3c744401
 spec:
   podManagementPolicy: OrderedReady
-  replicas: 2
+  replicas: 4
   revisionHistoryLimit: 10
   selector:
     matchLabels:
@@ -123,10 +123,10 @@ spec:
           resources:
             limits:
               cpu: '1'
-              memory: 512Mi
+              memory: 128Mi
             requests:
               cpu: '1'
-              memory: 512Mi
+              memory: 128Mi
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           volumeMounts:
